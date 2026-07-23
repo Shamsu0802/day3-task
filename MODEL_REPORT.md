@@ -84,3 +84,19 @@ After retraining the model with these parameters, the new training and testing a
 - Testing Accuracy: **77.38%**
 
 The tuned model showed improved generalization compared to the original Random Forest model.
+
+## Cross-Validation
+
+To further evaluate the robustness of the selected model, 5-fold Stratified Cross-Validation was performed on the Logistic Regression model. Stratified sampling was used to preserve the class distribution in each fold.
+
+The cross-validation results were:
+
+- Fold 1 Accuracy: **71.43%**
+- Fold 2 Accuracy: **79.76%**
+- Fold 3 Accuracy: **69.05%**
+- Fold 4 Accuracy: **72.62%**
+- Fold 5 Accuracy: **80.95%**
+
+The average cross-validation accuracy was **74.76%**, with a standard deviation of **4.73%**.
+
+The average cross-validation accuracy is reasonably close to the test accuracy obtained from the train-test split (**76.19%**). This indicates that the Logistic Regression model performs consistently across different subsets of the dataset and generalizes well to unseen data. The relatively low standard deviation also suggests that the model's performance is stable and not heavily dependent on a particular train-test split.
