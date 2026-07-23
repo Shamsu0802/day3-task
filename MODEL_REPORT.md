@@ -31,5 +31,12 @@
 - Ensured preprocessing was fitted only on the training data to prevent data leakage.
 - Used random_state=42 to make model training reproducible.
 
+## Step 5: Model Evaluation and Overfitting Analysis
+- Evaluated Logistic Regression and Random Forest models using Accuracy, Precision, Recall, F1 Score, and ROC-AUC.
+- Logistic Regression achieved the best overall performance with an accuracy of 76.19% and the highest ROC-AUC score.
+- Compared training and testing accuracy for both models to identify overfitting.
+- Logistic Regression achieved 76.19% accuracy on both the training and testing datasets, indicating good generalization and no significant overfitting.
+- Random Forest achieved 100% training accuracy but only 75% testing accuracy, indicating overfitting.
+- To reduce overfitting in the Random Forest model, techniques such as limiting tree depth, increasing minimum samples for splits/leaves, using cross-validation, and  collecting more data can be considered.
 
 
