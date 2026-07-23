@@ -40,3 +40,47 @@
 - To reduce overfitting in the Random Forest model, techniques such as limiting tree depth, increasing minimum samples for splits/leaves, using cross-validation, and  collecting more data can be considered.
 
 
+## Overfitting Analysis
+
+To identify overfitting, the training and testing accuracy of both models were compared.
+
+### Logistic Regression
+
+- Training Accuracy: **76.19%**
+- Testing Accuracy: **76.19%**
+
+The training and testing accuracies are identical, indicating that the Logistic Regression model generalizes well to unseen data and does not exhibit significant overfitting.
+
+### Random Forest (Before Tuning)
+
+The initial Random Forest model was trained using the default parameters:
+
+- max_depth = None (no depth limit)
+- min_samples_split = 2
+- min_samples_leaf = 1
+- n_estimators = 100
+
+Results:
+
+- Training Accuracy: **100.00%**
+- Testing Accuracy: **75.00%**
+
+Since the training accuracy was perfect while the testing accuracy was considerably lower, the model was overfitting the training data. This occurred because the trees were allowed to grow without any restriction, causing the model to memorize the training data rather than learn generalized patterns.
+
+### Random Forest (After Tuning)
+
+To reduce overfitting, the following hyperparameters were modified:
+
+- max_depth = 5
+- min_samples_split = 10
+- min_samples_leaf = 5
+- n_estimators = 100
+
+These changes reduced the complexity of the trees by limiting their depth and requiring more samples before creating new splits and leaf nodes. This helps the model generalize better to unseen data and reduces the gap between training and testing performance.
+
+After retraining the model with these parameters, the new training and testing accuracies were:
+
+- Training Accuracy: **84.52%**
+- Testing Accuracy: **77.38%**
+
+The tuned model showed improved generalization compared to the original Random Forest model.
