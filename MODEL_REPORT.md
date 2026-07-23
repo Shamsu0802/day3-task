@@ -21,5 +21,5 @@
 - Applied StandardScaler to numerical features to normalize their values for models that are sensitive to feature scales.
 - Applied OneHotEncoder to categorical features to convert categorical values into numerical format.
 - Combined both preprocessing steps using a ColumnTransformer.
-- Configured the preprocessing pipeline to be fitted only on the training data during model training, preventing data leakage and ensuring a fair evaluation.
+- Configured the preprocessing pipeline to be fitted only on the training data during model training, preventing data leakage and ensuring a fair evaluation....
 
